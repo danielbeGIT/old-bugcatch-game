@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<title>Bugcatchers</title>
+
+	<!-- Bootstrap 5 styles -->
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+
+	<!-- Styles -->
+	<link rel="stylesheet" href="./assets/css/style.css">
+</head>
+
+<body>
+
+	<!-- Section for the startup screen -->
+	<section id="start-screen" class="start-screen">
+		<h1>Bugcatchers: Kill the virus</h1>
+
+		<p id="username-error" class="alert alert-danger hide"></p>
+		<!-- Form to enter a username and enter the game -->
+		<form id="name-form" class="input-form mb-3">
+			<input type="text" id="username" class="form-control form-control-lg" placeholder="Your name" required autofocus>
+			<button type="submit" class="btn btn-primary">Enter queue</button>
+		</form>
+	</section>
+
+	<!-- Section for the waiting screen -->
+	<section id="waiting-screen" class="waiting-screen hide">
+		<marquee behavior="loop" direction="left" scrollamount="10">
+			<h2>Waiting for opponent..</h2>
+		</marquee>
+
+		<!-- Button to exit the queue -->
+		<button onClick="window.location.reload()" type="button" class="btn btn-primary px-3">Cancel</button>
+
+	</section>
+
+	<!-- Section for the game itself -->
+	<section id="game-screen" class="game-screen hide">
+		<h1 class="text-center p-3">Kill the virus!</h1>
+		<div class="container d-flex">
+			
+			<!-- Game field -->
+			<div id="playing-field" class="col-9 bg-white black-border play-field">
+				<div id="round-countdown" class="container hide">
+					<p>Let's begin!</p>
+					<p>Next round in: <span>3</span></p>
+				</div>
+				
+				<!-- Virus play-field (grid) -->
+				<div class="position hide" id="1"></div>
+				<div class="position hide" id="2"></div>
+				<div class="position hide" id="3"></div>
+				<div class="position hide" id="4"></div>
+				<div class="position hide" id="5"></div>
+				<div class="position hide" id="6"></div>
+				<div class="position hide" id="7"></div>
+				<div class="position hide" id="8"></div>
+				<div class="position hide" id="9"></div>
+			</div>
+
+			<!-- Score field -->
+			<div id="score-field" class="col-3 black-border score-field">
+				<div id="scores" class="my-4">
+					<h4 id="user">Player score: 0</h4>
+					<h4 id="opponent">Opponent score: 0</h4>
+				</div>
+				<div id="time-stamp" class="my-4">	
+					<div id="userTime">
+						<p>Your Time</p>
+						<h5>00:00:00</h5>
+					</div>
+					<div id="opponentTime">
+						<p>Opponent Time</p>
+						<h5>00:00:00</h5>
+					</div>
+				</div>
+
+				<!-- Surrender button -->
+				<div id="surrender" class="text-center">
+					<button onClick="window.location.reload()" type="button" class="btn btn-danger px-3">
+						<span>Surrender</span>
+					</button>
+				</div>
+			</div>
+
+		</div>
+	</section>
+
+	<!-- Result section -->
+	<section id="endResults" class="waiting-screen hide">
+		
+		<!-- Show user if they won or lost, Win = Green Color, Lose = Red Color -->
+		<h2 id="winnersName"></h2>
+		<h2 id="result"></h2>
+
+		<button onClick="window.location.reload()" type="button" id="cancel-queue" class="btn btn-primary px-3">Leave</button>
+	</section>
+
+	<!-- Bootstrap 5 script -->
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment-with-locales.min.js" integrity="sha512-LGXaggshOkD/at6PFNcp2V2unf9LzFq6LE+sChH7ceMTDP0g2kn6Vxwgg7wkPP7AAtX+lmPqPdxB47A0Nz0cMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+	<!-- Socket.IO -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.4.1/socket.io.js"></script>
+
+	<!-- Chat script -->
+	<script src="./assets/js/game.js"></script>
+</body>
+</html>

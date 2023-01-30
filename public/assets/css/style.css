@@ -1,0 +1,113 @@
+body {
+	background-color: rgb(118, 129, 129);
+}
+
+.hide {
+	display: none !important;
+}
+
+marquee {
+	width: 25%;
+}
+
+.waiting-screen button {
+	width: 200px;
+}
+
+.text-center button {
+	width: 150px;
+	height: 120px;
+	border-radius: 50%;
+}
+
+.text-center span {
+	font-size: x-large;
+}
+
+.start-screen, .waiting-screen {
+	height: 100vh;
+	display: flex;
+	flex-flow: column;
+	justify-content: center;
+	align-items: center;
+	gap: 2rem;
+}
+
+.input-form {
+	display: flex;
+	flex-flow: column;
+	gap: 0.5rem;
+}
+
+.input-form label {
+	font-size: 1.5rem;
+}
+
+.game-screen {
+	height: 100vh;
+	width: 100vw;
+}
+
+.score-field {
+	padding: 10px;
+}
+
+
+.black-border {
+	border: 1px solid black
+}
+
+.play-field {
+	display: flex;
+	flex-wrap: wrap;
+	padding: 20px;
+	height: 80vh;
+	cursor: url('../icons/space-gun.png'), auto;
+}
+
+.aim {
+	cursor: url('../icons/space-gun-tilted.png'), auto;
+}
+
+.position {
+	height: 28%;
+	width: 28%;
+}
+
+.virus {
+	background-image: url('../icons/green-cartoon-corona-virus.png');
+	background-size: cover;
+	width: 120px;
+	height: 120px;
+	margin: 12px;
+}
+
+
+#round-countdown {
+	height: 100%;
+	background-color: rgba(100,100,100,0.3);
+	display: flex;
+	flex-flow: column;
+	justify-content: center;
+	align-items: center;
+	font-size: 2rem;
+	border-radius: 10px;
+}
+
+.won-round {
+	color: rgb(80, 155, 80);
+}
+
+.lost-round {
+	color: rgb(199, 76, 76);
+}
+
+#scores {
+	padding: 1rem;
+	background-color: rgb(216, 216, 208);
+}
+
+#time-stamp {
+	padding: 1rem;
+	background-color: rgb(200, 200, 230);
+}
